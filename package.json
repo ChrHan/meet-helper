@@ -7,5 +7,15 @@
     "email": "muhammad@saiful.web.id",
     "url": "https://saiful.web.id/"
   },
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "webpack --config webpack/webpack.config.ts"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2",
+    "webpack-cli": "^5.0.1"
+  }
 }
