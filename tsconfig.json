@@ -5,10 +5,15 @@
         "target": "es6",
         "esModuleInterop": true,
         "sourceMap": true,
-        "outDir": "dist",
+        "rootDir": ".",
+        "outDir": "",
         "noEmitOnError": true,
         "typeRoots": [
             "node_modules/@types"
-        ]
-    }
+        ],
+        "composite": true
+    },
+    "files": [
+        "package.json"
+    ]
 }
