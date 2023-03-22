@@ -1,0 +1,10 @@
+{
+  "name": "meet-helper",
+  "version": "0.1.0",
+  "description": "Automate several things while having meetings on Google Meet.",
+  "author": {
+    "name": "Muhammad Saiful Islam",
+    "email": "muhammad@saiful.web.id",
+    "url": "https://saiful.web.id/"
+  }
+}
