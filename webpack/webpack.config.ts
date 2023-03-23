@@ -7,6 +7,7 @@ const srcDir = path.join(__dirname, '../src');
 const config: webpack.Configuration = {
     mode: 'production',
     entry: {
+        background: path.join(srcDir, 'background.ts'),
         content: path.join(srcDir, 'content.ts')
     },
     output: {

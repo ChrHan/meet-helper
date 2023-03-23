@@ -3,6 +3,12 @@
     "name": "Meet Helper",
     "description": "Automate several things while having meetings on Google Meet.",
     "version": "0.1.0",
+    "permissions": [
+        "notifications"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
     "content_scripts": [
         {
             "js": [

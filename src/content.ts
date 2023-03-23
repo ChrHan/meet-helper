@@ -1,5 +1,5 @@
 const body = document.body;
-const observer = new MutationObserver(mutations => {
+const observer = new MutationObserver(async mutations => {
     for (let mutation of mutations) {
         if (mutation.type != 'childList')
             continue;
@@ -7,7 +7,7 @@ const observer = new MutationObserver(mutations => {
         for (let node of mutation.addedNodes) {
             if (node.textContent == 'call_end'
                 && node.parentElement?.classList.contains('google-material-icons')) {
-                console.log('Joined a call');
+                await chrome.runtime.sendMessage({ event: 'joined_call' });
             }
         }
     }
