@@ -1,6 +1,6 @@
 {
   "name": "meet-helper",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Automate several things while having meetings on Google Meet.",
   "author": {
     "name": "Muhammad Saiful Islam",
@@ -9,11 +9,13 @@
   },
   "private": true,
   "scripts": {
+    "all": "npm i && npm run build",
     "build": "webpack --config webpack/webpack.config.ts"
   },
   "devDependencies": {
     "@types/chrome": "^0.0.224",
     "copy-webpack-plugin": "^11.0.0",
+    "ts-loader": "^9.4.2",
     "ts-node": "^10.9.1",
     "typescript": "^5.0.2",
     "webpack": "^5.76.2",

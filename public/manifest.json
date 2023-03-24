@@ -2,9 +2,10 @@
     "manifest_version": 3,
     "name": "Meet Helper",
     "description": "Automate several things while having meetings on Google Meet.",
-    "version": "0.1.0",
+    "version": "0.2.0",
     "permissions": [
-        "notifications"
+        "notifications",
+        "activeTab"
     ],
     "background": {
         "service_worker": "background.js"
@@ -18,5 +19,8 @@
                 "https://meet.google.com/*"
             ]
         }
-    ]
+    ],
+    "action": {
+        "default_popup": "popup.html"
+    }
 }
