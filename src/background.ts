@@ -9,11 +9,28 @@ function notifyUserToTakeScreenshot() {
     });
 }
 
+async function takeScreenshot(tabId: number) {
+    try {
+        const tab = await chrome.tabs.get(tabId);
+        await chrome.tabs.update(tabId, { active: true });
+        const dataUrl = await chrome.tabs.captureVisibleTab(tab.windowId, { format: 'png' });
+
+        chrome.tabs.create({ url: dataUrl });
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    const tabId = sender.tab?.id;
+
     if (request.type === 'getTabId') {
-        const tabId = sender.tab?.id;
         sendResponse({ tabId });
     } else if (request.type === 'remindToScreenshot') {
         notifyUserToTakeScreenshot();
+    } else if (request.type === 'takeScreenshot') {
+        if (tabId !== undefined) {
+            takeScreenshot(tabId);
+        }
     }
 })

@@ -7,7 +7,7 @@ async function getCurrentTabId(): Promise<number> {
 }
 
 async function remindToScreenshot() {
-    await chrome.runtime.sendMessage({ type: 'remindToScreenshot' })
+    await chrome.runtime.sendMessage({ type: 'takeScreenshot' })
 }
 
 const body = document.body;
@@ -19,8 +19,7 @@ const observer = new MutationObserver(async mutations => {
         for (let node of mutation.addedNodes) {
             if (node.textContent == 'call_end'
                 && node.parentElement?.classList.contains('google-material-icons')) {
-                remindToScreenshot();
-
+                setTimeout(remindToScreenshot, 5 * 1000);
                 setTimeout(remindToScreenshot, 5 * 60 * 1000);
             }
         }
