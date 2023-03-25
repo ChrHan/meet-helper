@@ -1,5 +1,13 @@
+async function getCurrentTabId(): Promise<number> {
+    return new Promise((resolve) => {
+        chrome.runtime.sendMessage({ type: 'getTabId' }, (response) => {
+            resolve(response.tabId);
+        });
+    });
+}
+
 async function remindToScreenshot() {
-    await chrome.runtime.sendMessage({ event: 'joined_call' })
+    await chrome.runtime.sendMessage({ type: 'remindToScreenshot' })
 }
 
 const body = document.body;
@@ -23,3 +31,8 @@ observer.observe(body, {
     childList: true,
     subtree: true
 });
+
+(async () => {
+    const currentTabId = await getCurrentTabId();
+    console.log(`Current tab ID: ${currentTabId}`);
+})();
