@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Meet Helper",
     "description": "Automate several things while having meetings on Google Meet.",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "permissions": [
         "notifications",
         "activeTab"
