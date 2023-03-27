@@ -8,3 +8,4 @@ I want this extension to:
   - [x] shortly after joining a Meet call
   - [x] 5 minutes after joining a Meet call
   - [ ] when any participants starts sharing their screen
+- [ ] before automatically taking screenshot, open the Participant list first
